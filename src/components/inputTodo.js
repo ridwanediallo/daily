@@ -4,9 +4,13 @@ import AuthContext from '../context/auth-context';
 const InputTodo = () => {
   const todoContext = useContext(AuthContext);
 
+    const handleSubmit = (e) => {
+      e.preventDefault();
+    };
+
   return (
     <div className="self-center">
-      <form className="flex">
+      <form className="flex" onSubmit={handleSubmit}>
         <input className="border py-2 w-full" type="text" name="name" />
         <input
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
